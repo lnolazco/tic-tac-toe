@@ -1,18 +1,23 @@
 describe("Tictactoe", function() {
-  var players;
+  var playerX, playerO, players, board;
 
   beforeEach(function() {
-    players = undefined;
+
+    playerX = new Player();
+    playerO = new Player();
+    players = [playerX, playerO];
+    board = new Board();
   });
 
 
+  it("should exist two players", function(){
 
-
-  it("should exit two players", function(){
-
-    expect(players).toBeDefined();
+    expect(playerX instanceof Player).toBeTruthy();
+    expect(playerO instanceof Player).toBeTruthy();
     expect(players.length).toBe(2);
+
   });
+
   it("should board be valid", function(){
     expect(board).toBeDefined();
   });
